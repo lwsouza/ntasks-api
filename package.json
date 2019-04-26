@@ -4,8 +4,15 @@
   "description": "API para gestão de tarefas",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "npm run apidoc && node index.js",
+    "apidoc": "apidoc -i routes/ -o public/apidoc",
     "test": "SET \"NODE_ENV=test\" && mocha test/**/*.js"
+  },
+  "apidoc": {
+    "name": "Documentação - Node Task API",
+    "template": {
+      "forceLanguage": "pt_br"
+    }
   },
   "author": "Lucas William de Souza",
   "dependencies": {
@@ -20,6 +27,7 @@
     "sqlite3": "^4.0.6"
   },
   "devDependencies": {
+    "apidoc": "^0.17.7",
     "babel-core": "^6.26.3",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
